@@ -18,8 +18,8 @@ public class UserIntercepter implements HandlerInterceptor {
 		if(session.getAttribute("user")!=null){
 			return true;
 		}
-		
-		return true;
+		response.sendRedirect("/login");
+		return false;
 	}
 
 	@Override

@@ -26,14 +26,14 @@
                 <td><a href="/show?id=${x.id}"><img src="${x.image}" alt=""></a></td>
                 <td><h4><a href="/show?id=${x.id}">${x.title}</a></h4></td>
                 <td><span class="v-time">${x.buytime?number_to_datetime?string("yyyy-MM-dd HH:mm")}</span></td>
-                <td><span class="v-unit">¥</span><span class="value">${x.buyPrice}</span></td>
+                <td><span class="v-unit">¥</span><span class="value">${(x.buyPrice/100)?string("#.00")}</span></td>
             </tr>
             </#list>
         </tbody>
         <tfoot>
             <tr>
                 <td colspan="3"><div class="total">总计：</div></td>
-                <td><span class="v-unit">¥</span><span class="value">${total}</span></td>
+                <td><span class="v-unit">¥</span><span class="value">${(total/100)?string("#.00")}</span></td>
             </tr>
         </tfoot>
     </table>

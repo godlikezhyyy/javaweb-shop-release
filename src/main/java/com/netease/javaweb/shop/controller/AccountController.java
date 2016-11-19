@@ -25,7 +25,8 @@ public class AccountController {
 	@Resource
 	private ProductService productService;
 	@RequestMapping("/account")
-	public String account(ModelMap map,@ModelAttribute("user") User user){
+	public String account(ModelMap map,HttpSession session){
+		User user=(User) session.getAttribute("user");
 		map.put("buyList", accountService.getBuyList(user));
 		return "account";
 	}

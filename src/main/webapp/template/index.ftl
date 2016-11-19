@@ -28,7 +28,7 @@
                     <a href="/show?id=${x.id}" class="link">
                         <div class="img"><img src="${x.image}" alt="${x.title}"></div>
                         <h3>${x.title}</h3>
-                        <div class="price"><span class="v-unit">¥</span><span class="v-value">${x.price}</span></div>
+                        <div class="price"><span class="v-unit">¥</span><span class="v-value">${(x.price/100)?string("#.00")}</span></div>
                     </a>
                 </li>
                 </#if>
@@ -39,7 +39,7 @@
                     <a href="/show?id=${x.id}" class="link">
                         <div class="img"><img src="${x.image}" alt="${x.title}"></div>
                         <h3>${x.title}</h3>
-                        <div class="price"><span class="v-unit">¥</span><span class="v-value">${x.price}</span></div>
+                        <div class="price"><span class="v-unit">¥</span><span class="v-value">${(x.price/100)?string("#.00")}</span></div>
                         <#if user && user.userType==0 && x.isBuy><span class="had"><b>已购买</b></span></#if>
                         <#if user && user.userType==1 && x.isSell><span class="had"><b>已售出</b></span></#if>
                     </a>

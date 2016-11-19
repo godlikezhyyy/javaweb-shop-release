@@ -3,6 +3,7 @@ package com.netease.javaweb.shop.controller;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -32,9 +33,10 @@ public class ProductController {
 	
 	@RequestMapping("/api/buy")
 	public String buy(@RequestParam int id,
-			HttpServletResponse rep,ModelMap map,@ModelAttribute("user") User user){
+			HttpServletResponse rep,ModelMap map,HttpSession session){
 		try{
-		productService.insert(id, user);
+			User user=(User) session.getAttribute("user");
+			productService.insert(id, user);
 		}catch(Exception e){
 			rep.setStatus(300);
 			map.put("code", 300);
