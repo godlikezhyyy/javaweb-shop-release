@@ -1,6 +1,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
 	http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -20,7 +21,9 @@
 			<bean class="com.netease.javaweb.shop.intercepter.UserIntercepter"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
-	<context:component-scan base-package="com.netease.javaweb.shop.*" />
+	<context:component-scan base-package="com.netease.javaweb.shop.*">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+	</context:component-scan>
 	
 	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
 		<property name="formatters">

@@ -17,7 +17,6 @@ public class StringToBigInteger implements Formatter<BigInteger> {
 	@Override
 	public BigInteger parse(String text, Locale locale) throws ParseException {
 		double number=Double.valueOf(text);
-		System.out.println(number);
 		return BigInteger.valueOf(Math.round(number*100));
 	}
 	

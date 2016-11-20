@@ -66,8 +66,7 @@ public class ProductServiceImpl implements ProductService {
 	public void insert(int id, User user) {
 		Product product=productDao.getProductById(id);
 		Trade trx=new Trade(id,user.getId(),product.getPrice().intValue(),BigInteger.valueOf(System.currentTimeMillis()));
-		trxDao.insert(trx);
-		
+		trxDao.insert(trx);		
 	}
 
 
@@ -76,15 +75,14 @@ public class ProductServiceImpl implements ProductService {
 		if(productDao.countTrx(id)>0){
 			return false;
 		}else{
-			productDao.deleteById(id);
+			productDao.deleteById(id);	
 			return true;
 		}
 		
 	}
 	
 	
-	public int insert(Product product){
-		
+	public int insert(Product product){		
 		return productDao.insert(product);
 	}
 

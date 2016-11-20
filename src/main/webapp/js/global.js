@@ -47,7 +47,7 @@
                     options.error && options.error('请求失败');
                 }
             }
-        }
+        };
         if(options.type == "POST"){
             xhr.open("POST", options.url, true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

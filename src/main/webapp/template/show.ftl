@@ -16,13 +16,13 @@
             <h2>${product.title}</h2>
             <p class="summary">${product.summary}</p>
             <div class="price">
-                <span class="v-unit">¥</span><span class="v-value">${(product.price/100)?string("#.00")}</span>
+                <span class="v-unit">¥</span><span class="v-value">${(product.price/100)?string("0.00")}</span>
             </div>
             <div class="oprt f-cb">
                 <#if user && user.userType==0>
                     <#if product.isBuy>
                     <span class="u-btn u-btn-primary z-dis">已购买</span>
-                    <span class="buyprice">当时购买价格：¥${(product.buyPrice/100)?string("#.00")}</span>
+                    <span class="buyprice">当时购买价格：¥${(product.buyPrice/100)?string("0.00")}</span>
                     <#else>
                     <button class="u-btn u-btn-primary" data-buy="${product.id}">购 买</button>
                     </#if>
